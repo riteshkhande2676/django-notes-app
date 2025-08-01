@@ -1,5 +1,5 @@
 FROM python:3.9
-
+FROM node:18-alpine
 WORKDIR /app/backend
 
 COPY requirements.txt /app/backend
