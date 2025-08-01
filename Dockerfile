@@ -1,11 +1,11 @@
-FROM python:3.9
+FROM python:3.9-alpine
 FROM node:18-alpine
 WORKDIR /app/backend
 
 COPY requirements.txt /app/backend
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y gcc default-libmysqlclient-dev pkg-config \
+RUN sudo apt update \
+    && sudo apt upgrade -y \
+    && sudo apt-get install -y gcc default-libmysqlclient-dev pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 
