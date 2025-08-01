@@ -12,7 +12,7 @@ RUN apt-get update \
 # Install app dependencies
 RUN pip install mysqlclient
 RUN pip install --no-cache-dir -r requirements.txt
-
+RUN apt update && apt install -y nodejs npm
 COPY . /app/backend
 CMD ["node", "app.js"]
 EXPOSE 8000
